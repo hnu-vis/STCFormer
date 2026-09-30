@@ -1,0 +1,5 @@
+from baselines.weather_baseline_config import build_weather_cfg
+from .arch import xPatch
+from .model_config import model_params
+
+CFG = build_weather_cfg("French_Temperature_dim1", xPatch, model_params)

@@ -36,6 +36,7 @@ def build_weather_cfg(data_name, model_arch, model_params, *, input_len=48,
     if output_len not in (24, 72):
         raise ValueError(f"WEATHER_OUTPUT_LEN must be 24 or 72, got {output_len}")
     seed = int(os.environ.get("WEATHER_SEED", 2024))
+    num_epochs = int(os.environ.get("WEATHER_EPOCHS", num_epochs))
     params = model_params(
         data_name=data_name,
         num_nodes=spec["num_nodes"],
@@ -109,8 +110,8 @@ def build_weather_cfg(data_name, model_arch, model_params, *, input_len=48,
     }})
     cfg.TRAIN.CLIP_GRAD_PARAM = {"max_norm": 5.0}
     data_loader = EasyDict({
-        "BATCH_SIZE": spec["batch_size"],
-        "NUM_WORKERS": 4,
+        "BATCH_SIZE": int(os.environ.get("WEATHER_BATCH_SIZE", spec["batch_size"])),
+        "NUM_WORKERS": int(os.environ.get("WEATHER_NUM_WORKERS", 0)),
         "PIN_MEMORY": True,
     })
     cfg.TRAIN.DATA = EasyDict(data_loader)

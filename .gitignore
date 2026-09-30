@@ -6,3 +6,4 @@ logs/
 runs/
 *.log
 .pytest_cache/
+artifacts/

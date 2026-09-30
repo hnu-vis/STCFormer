@@ -10,3 +10,7 @@ matplotlib
 pandas
 tqdm
 tensorboard
+scikit-learn==1.4.2
+pymetis==2023.1.1
+threadpoolctl
+reformer-pytorch==1.4.4
