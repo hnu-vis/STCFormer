@@ -1,0 +1,12 @@
+torch>=2.3
+numpy==1.24.4
+easy-torch==1.3.3
+easydict
+packaging
+setproctitle
+scipy
+einops
+matplotlib
+pandas
+tqdm
+tensorboard

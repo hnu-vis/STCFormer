@@ -1,0 +1,39 @@
+{
+    "name": "French_U_Wind_dim1",
+    "domain": "wind",
+    "shape": [
+        8784,
+        234,
+        5
+    ],
+    "num_time_steps": 8784,
+    "num_nodes": 234,
+    "num_features": 5,
+    "feature_description": [
+        "wind",
+        "time of day",
+        "day of week",
+        "day of mounth",
+        "day of year"
+    ],
+    "has_graph": true,
+    "frequency (minutes)": 60,
+    "regular_settings": {
+        "INPUT_LEN": 12,
+        "OUTPUT_LEN": 12,
+        "TRAIN_VAL_TEST_RATIO": [
+            0.6,
+            0.2,
+            0.2
+        ],
+        "NORM_EACH_CHANNEL": false,
+        "RESCALE": true,
+        "METRICS": [
+            "MAE",
+            "RMSE",
+            "MAPE"
+        ],
+        "NULL_VAL": 0.0,
+        "SEDI_THRESHOLD": 6.696692720483015
+    }
+}
